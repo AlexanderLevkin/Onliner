@@ -51,7 +51,7 @@ class Base:
     def assert_url(self, result):
         get_url = self.driver.current_url
         assert get_url == result
-        print("GOOD VALUE URL")
+        print(f"GOOD VALUE URL {get_url}")
 
     def get_param_url(self, param: str):
         self.driver.get(self.driver.current_url + param)
@@ -60,5 +60,5 @@ class Base:
 
     def get_screenshot(self):
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
-        name_screenshot = 'SHOT ' + now_date + '.png'
-        self.driver.save_screenshot('/Users/alexanderlevkin/Desktop/LESSONS/pythonProject/SCREEN' + name_screenshot)
+        name_screenshot = 'SCREENSHOT ' + now_date + '.png'
+        self.driver.save_screenshot('/Users/alexanderlevkin/Desktop/LESSONS/Onliner/SCREEN/' + name_screenshot)
