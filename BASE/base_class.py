@@ -21,8 +21,15 @@ class Base:
     def scroll_to_element_and_click(self, locator):
         ActionChains(self.driver).pause(0.3).scroll_to_element(locator).click().perform()
 
+    def scroll_to_element(self, locator):
+        ActionChains(self.driver).pause(0.3).move_to_element(locator).perform()
+
     def click_and_send_value(self, locator, value):
         ActionChains(self.driver).pause(0.3).move_to_element(locator).click().send_keys(value).perform()
+
+    def click_and_hold_slider(self, locator, x, y):
+        ActionChains(self.driver).move_to_element(locator).perform()
+        ActionChains(self.driver).click_and_hold(locator).move_by_offset(x, y).release().perform()
 
     def verify_element_to_be_clickable(self, locator: tuple):
         return WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable(locator))
@@ -51,7 +58,7 @@ class Base:
     def assert_url(self, result):
         get_url = self.driver.current_url
         assert get_url == result
-        print(f"GOOD VALUE URL {get_url}")
+        print(f"GOOD VALUE URL {get_url} CORRESPOND {result}")
 
     def get_param_url(self, param: str):
         self.driver.get(self.driver.current_url + param)
