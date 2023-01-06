@@ -69,7 +69,7 @@ class MainPage(Base):
 
     # Methods
 
-    def enter_to_account(self):
+    def test_enter_to_account(self):
         self.get_current_url()
         self.click_authorization_button()
         self.click_login_field()

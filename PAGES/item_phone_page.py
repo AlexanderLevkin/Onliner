@@ -39,10 +39,9 @@ class ItemPage(Base):
         self.click_element_emulate_human(self.get_mobile_section())
         print("CLICK ON THE MOBILE SECTION")
 
-    def get_item(self):
+    def test_get_item(self):
         self.click_electronics_section()
         self.click_mobile_and_accessories_section()
-        self.click_mobile_section()
         self.click_mobile_section()
         time.sleep(1)
         self.assert_url(result="https://www.amd.by/mobile/")

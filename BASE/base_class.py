@@ -60,8 +60,10 @@ class Base:
         assert get_url == result
         print(f"GOOD VALUE URL {get_url} CORRESPOND {result}")
 
+    """Transfer to every url"""
     def get_param_url(self, param: str):
         self.driver.get(self.driver.current_url + param)
+        print(f"TRANSFER TO {self.driver.current_url}")
 
     """Method screen shot"""
 
